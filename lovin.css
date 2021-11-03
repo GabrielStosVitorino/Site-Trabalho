@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
+
+@font-face {
+    font-family: 'Space';
+    src: url(Fontes/space\ age.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.bodya{
+    background: url(Fotos/planets-website-images/background.png) no-repeat;
+    background-size: cover;
+}
+
+.abertura{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.abertura img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.abertura h1{
+    position: relative;
+    color: #fff;
+    font-size: 6em;
+    font-family: 'Space', times;
+    z-index: 100;
+}
+
+.abertura a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 1000;
+}
+
+.abertura a:hover{
+    color: #000;
+    background: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    transition-delay: 1s;
+}
+
+.abertura a span{
+    position: absolute;
+    display: block;
+}
+
+.abertura a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+.abertura a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.abertura a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.abertura a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+/* Parte home */
+
+header{
+    position: fixed;
+    width: 100% ;
+    z-index: 1000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-size: 1.15rem;
+}
+
+.menu{
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+}
+
+.logo img{
+    width: 300px;
+}
+
+.earth{
+    flex-grow: 0.3;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+
+.option a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* .inicio{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(Fotos/earth-1756274.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(#000, transparent);
+    pointer-events: none;
+}
+
+.inicio::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(360deg,#000, transparent);
+    pointer-events: none;
+}
+
+.fundo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.caixa{
+    position: relative;
+    z-index: 100;
+}
+
+.caixa h1{
+    font-size: 5rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space', sans-serif;
+    font-weight: lighter;
+}
+
+.caixa p{
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sec1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container{
+    width: 70%;
+    height: 100%;
+    text-align: center;
+}
+
+.space img{
+    width: 300px;
+}
+
+.mensagem h2{
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.navegue{
+    background-image: url(Fotos/galaxy-11098.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+} */
+
+.comeco::before,
+.conteudo::before,
+.ajuda::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgb(0, 0, 0), transparent);
+    pointer-events: none;
+}
+
+.comeco::after,
+.conteudo::after,
+.ajuda::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(360deg,rgb(0, 0, 0), transparent);
+    pointer-events: none;
+}
+
+.comeco{
+    position: relative;
+    background: url(Fotos/earth-1756274.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    z-index: 10000;
+}
+
+.caixa h1{
+    font-size: 5rem;
+    font-family: 'Space', sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    z-index: 10000;
+}
+
+.caixa p{
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    z-index: 10000;
+}
+
+.texto{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container img{
+    width: 300px;
+}
+
+.texto .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+.caixa h2{
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.conteudo{
+    position: relative;
+    background: url(Fotos/galaxy-11098.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.conteudo .container a{
+    position: relative;
+    transform: translate(-50%, -50%);
+    padding: 8px 20px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #1b91bf, #c32a48, #fff7de, #1b91bf);
+    background-size: 400%;
+    border-radius: 30px;
+}
+
+.conteudo .container a:hover{
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+.space{
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+}
+
+.ajuda{
+    position: relative;
+    background: url(Fotos/sky-828648.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ajuda .caixa{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.coluna form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.coluna .forma{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.63);
+    width: 40vw;
+    height: 50px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.coluna .forma:focus,
+.coluna .forma:hover{
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255, 1);
+    box-shadow: none;
+}
+
+.coluna .textarea{
+    min-height: 100px;
+}
+
+.coluna label{
+    color: white;
+    font-size: 1.25rem;
+}
+
+.ajuda .botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda .botao button{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

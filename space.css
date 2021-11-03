@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Space';
+    src: url('Fontes/space\ age.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+}
+
+.bemvindo{
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    color: rgba(255, 255, 255, .75);
+    font-family: 'Space', times;
+    font-size: 2em;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.mensagem{
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    color: rgba(255, 255, 255, .75);
+    font-family: 'Space', times;
+    font-size: 2em;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.animação{
+    animation: cursorpisca 600ms steps(45) infinite normal, escrevendo 3s steps(45) 1s normal both;
+}
+
+
+@keyframes escrevendo{
+    from{
+        width: 0;
+    }
+    to {
+        width: 17.4em;
+    }
+}
+
+@keyframes cursorpisca{
+    from{
+        border-right-color: rgba(255, 255, 255, .75)
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
