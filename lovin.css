@@ -14,6 +14,20 @@
     scroll-behavior: smooth;
 }
 
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000cc;
+    border-radius: 20px;
+  }
+
 .bodya{
     background: url(Fotos/planets-website-images/background.png) no-repeat;
     background-size: cover;
@@ -143,7 +157,8 @@ p{
 }
 
 .menu{
-    background: #000;
+    background: transparent !important;
+    transition: 0.5s;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,113 +180,41 @@ p{
     justify-content: space-between;
 }
 
-
 .option a{
     text-decoration: none;
     color: #fff;
 }
 
-/* .inicio{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url(Fotos/earth-1756274.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.option a:hover,
+.option a:focus{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 5px 9px;
 }
 
-.inicio::before{
+.comeco::before{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 400px;
-    background: linear-gradient(#000, transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.658), transparent);
     pointer-events: none;
 }
 
-.inicio::after{
+.comeco::after{
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 400px;
-    background: linear-gradient(360deg,#000, transparent);
+    background: linear-gradient(360deg,rgba(0, 0, 0, 0.658), transparent);
     pointer-events: none;
 }
 
-.fundo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-}
-
-.caixa{
-    position: relative;
-    z-index: 100;
-}
-
-.caixa h1{
-    font-size: 5rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Space', sans-serif;
-    font-weight: lighter;
-}
-
-.caixa p{
-    color: #fff;
-    font-size: 1.3rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.sec1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background: #000;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-.container{
-    width: 70%;
-    height: 100%;
-    text-align: center;
-}
-
-.space img{
-    width: 300px;
-}
-
-.mensagem h2{
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.navegue{
-    background-image: url(Fotos/galaxy-11098.jpg);
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-} */
-
-.comeco::before,
 .conteudo::before,
 .ajuda::before{
     content: '';
@@ -284,7 +227,6 @@ p{
     pointer-events: none;
 }
 
-.comeco::after,
 .conteudo::after,
 .ajuda::after{
     content: '';
@@ -302,6 +244,7 @@ p{
     background: url(Fotos/earth-1756274.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: bottom;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -312,6 +255,40 @@ p{
 
 .container{
     z-index: 10000;
+}
+
+.clouds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: nuvem calc(3s * var(--i)) linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes nuvem{
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
 }
 
 .caixa h1{
@@ -369,6 +346,41 @@ p{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.clouds2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 109%;
+    overflow: hidden;
+    pointer-events: none;
+    transform: rotate(180deg);
+}
+
+.clouds2 img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: nuvem calc(3s * var(--i)) linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes nuvem{
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
 }
 
 .conteudo .container a{
