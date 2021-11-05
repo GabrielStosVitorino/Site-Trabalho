@@ -157,7 +157,7 @@ p{
 }
 
 .menu{
-    background: transparent !important;
+    background: #000;
     transition: 0.5s;
     display: flex;
     justify-content: space-between;
