@@ -295,6 +295,38 @@ p{
     pointer-events: none;
 }
 
+.fade{
+    animation: fadein 1.2s both;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.fade3{
+    animation: fadein 1.8s both;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
 .comeco{
     position: relative;
     background: url(Fotos/earth-1756274.jpg) no-repeat;
@@ -654,6 +686,23 @@ footer .container{
     z-index: 10000;
 }
 
+.fade2{
+    animation: fadeun 1.2s both;
+}
+
+@keyframes fadeun{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
 .badyv{
     background: url(Fotos/planetas/galaxia.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -750,4 +799,174 @@ section .container2 .content{
 
 section:nth-child(even) .container2 .content{
     left: 0;
+}
+
+/* Parte Login */
+
+.seco{
+    position: relative;
+    min-height: 100vh;
+    background: url(Fotos/star-trails-1846734.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.seco.active{
+    background: url(Fotos/planetas/wallpaperflare.com_wallpaper\ \(35\).jpg)no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.seco .container3{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.seco .container3 .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.seco .container3 .user .image{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.seco .container3 .user .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seco .container3 .user .forma2{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.seco .container3 .user .forma2 h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.seco .container3 .user .forma2 input{
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.seco .container3 .user .forma2 input[type="submit"]{
+    max-width: 100px;
+    background: #00485f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    border: none;
+}
+
+.seco .container3 .user.cadastro .forma2 input[type="submit"]{
+    background: #0f354a;
+}
+
+.seco .container3 .user .forma2 .cadastre{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.seco .container3 .user .forma2 .cadastre a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #00485f;
+}
+
+.seco .container3 .user.cadastro .forma2 .cadastre a{
+    color: #0f354a;
+}
+
+.seco .container3 .cadastro{
+    pointer-events: none;
+}
+
+.seco .container3.active .cadastro{
+    pointer-events: initial;
+}
+
+.seco .container3 .cadastro .forma2{
+    top: 100%;
+}
+
+.seco .container3.active .cadastro .forma2{
+    top: 0;
+}
+
+.seco .container3 .cadastro .image{
+    top: -100%;
+    transition: 0.5s;
+}
+
+.seco .container3.active .cadastro .image{
+    top: 0;
+}
+
+.seco .container3 .logar .forma2{
+    top: 0;
+}
+
+.seco .container3.active .logar .forma2{
+    top: 100%;
+}
+
+.seco .container3 .logar .image{
+    top: 0;
+    transition: 0.5s;
+}
+
+.seco .container3.active .logar .image{
+    top: -100%;
 }
