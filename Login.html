@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="lovin.css">
-</head>
-<body>
-    <section class="seco">
-        <div class="container3">
-            <div class="user logar">
-               
-                <div class="forma2">
-                    <form>
-                        <h2>Login</h2>
-                        <input type="text" placeholder="E-mail">
-                        <input type="password" placeholder="Senha">
-                        <input type="submit" value="Logar">
-                        <p class="cadastre">Não tem uma conta? <a href="#" onclick="toggle()">Cadastre-se</a></p>
-                    </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="lovin.css">
+    </head>
+    <body>
+        <section class="seco">
+            <div class="container3">
+                <div class="user logar">
+                    
+                    <div class="formulario">
+                        <form id="form_login" method="post" onsubmit="return entrar()">
+                            <h2>Login</h2>
+                            <input name="email" type="text" placeholder="E-mail">
+                            <input name="senha" type="password" placeholder="Senha">
+                            <input type="submit" onclick="entrar()" value="Logar">
+                            <p class="cadastre">Não tem uma conta? <a href="#" onclick="toggle()">Cadastre-se</a></p>
+                        </form>
+                    </div>
+                    <div class="image">
+                        <img src="Fotos/pexels-benjamin-suter-3617500.jpg">
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="Fotos/pexels-benjamin-suter-3617500.jpg">
-                </div>
-            </div>
 
-            <div class="user cadastro">
-                <div class="image">
-                    <img src="Fotos/nick-rickert-dHXcOy3umtE-unsplash.jpg">
-                </div>
-                <div class="forma2">
-                    <form>
-                        <h2>Crie uma conta</h2>
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="E-mail">
-                        <input type="password" placeholder="Senha">
-                        <input type="password" placeholder="Confirme sua senha">
-                        <input type="submit" value="Cadastrar">
+                <div class="user cadastro">
+                    <div class="image">
+                        <img src="Fotos/nick-rickert-dHXcOy3umtE-unsplash.jpg">
+                    </div>
+                    <div class="formulario">
+                        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                            <h2>Crie uma conta</h2>
+                        <input name="nome" type="text" placeholder="Nome">
+                        <input name="email" type="text" placeholder="E-mail">
+                        <input name="senha" type="password" placeholder="Senha">
+                        <input name="senhac" type="password" placeholder="Confirme sua senha">
+                        <input type="submit" onclick="cadastro()" value="Cadastrar">
                         <p class="cadastre">Já possui uma conta? <a href="#" onclick="toggle()">Entrar</a></p>
                     </form>
                 </div>
@@ -51,6 +51,7 @@
             container3.classList.toggle('active');
             seco.classList.toggle('active');
         }
-    </script>
+        </script>
 </body>
 </html>
+<script src="Logar.js"></script>
