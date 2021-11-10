@@ -1,0 +1,988 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mohave&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+@font-face {
+    font-family: 'Space';
+    src: url(Fontes/space\ age.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+#scroll{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255, 0.05);
+    z-index: 100;
+}
+
+#progresso{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: rolar 5s linear infinite;
+    z-index: 100;
+    border-radius: 20px;
+}
+
+@keyframes rolar{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progresso::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+
+#progresso::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+.bodya{
+    background: url(Fotos/planets-website-images/background.png) no-repeat;
+    background-size: cover;
+}
+
+.abertura{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.abertura img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.abertura h1{
+    position: relative;
+    color: #fff;
+    font-size: 6em;
+    font-family: 'Space', times;
+    z-index: 100;
+}
+
+.abertura a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 1000;
+}
+
+.abertura a:hover{
+    color: #000;
+    background: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    transition-delay: 1s;
+}
+
+.abertura a span{
+    position: absolute;
+    display: block;
+}
+
+.abertura a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+.abertura a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.abertura a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.abertura a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fff);
+}
+
+.abertura a:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+/* Parte home */
+
+header{
+    position: fixed;
+    width: 100% ;
+    z-index: 1000000;
+}
+
+p{
+    font-size: 1.15rem;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.menu{
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    box-shadow: #000 0px 0px 10px 5px;
+}
+
+.logo img{
+    width: 300px;
+}
+
+.earth{
+    flex-grow: 0.3;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.option a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.option a:hover,
+.option a:focus{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 5px 9px;
+}
+
+.comeco::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.658), transparent);
+    pointer-events: none;
+}
+
+.comeco::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(360deg,rgba(0, 0, 0, 0.658), transparent);
+    pointer-events: none;
+}
+
+.conteudo::before,
+.ajuda::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgb(0, 0, 0), transparent);
+    pointer-events: none;
+}
+
+.conteudo::after,
+.ajuda::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(360deg,rgb(0, 0, 0), transparent);
+    pointer-events: none;
+}
+
+.fade{
+    animation: fadein 1.2s both;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.fade3{
+    animation: fadein 1.8s both;
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.comeco{
+    position: relative;
+    background: url(Fotos/earth-1756274.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    z-index: 10000;
+}
+
+.clouds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: nuvem calc(3s * var(--i)) linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes nuvem{
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+.caixa h1{
+    font-size: 5rem;
+    font-family: 'Space', sans-serif;
+    font-weight: lighter;
+    color: #fff;
+    z-index: 10000;
+}
+
+.caixa p{
+    font-size: 1.3rem;
+    color: #fff;
+    z-index: 10000;
+}
+
+.texto{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container img{
+    width: 300px;
+}
+
+.texto .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+.caixa h2{
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.conteudo{
+    position: relative;
+    background: url(Fotos/universe-2742113.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.clouds2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 109%;
+    overflow: hidden;
+    pointer-events: none;
+    transform: rotate(180deg);
+    margin-top: -224px;
+}
+
+.clouds2 img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: nuvem calc(3s * var(--i)) linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes nuvem{
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+.conteudo .container a{
+    position: relative;
+    transform: translate(-50%, -50%);
+    padding: 8px 20px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #1b91bf, #c32a48, #fff7de, #1b91bf);
+    background-size: 400%;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.conteudo .container a:hover{
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+.space{
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+}
+
+.ajuda{
+    position: relative;
+    background: url(Fotos/polar-lights-5858656.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda .caixa{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.coluna form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.coluna .forma{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.63);
+    width: 40vw;
+    height: 50px;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.coluna .forma:focus,
+.coluna .forma:hover{
+    border: none;
+    border-bottom: 3px solid rgba(255,255,255, 1);
+    box-shadow: none;
+}
+
+.coluna .textarea{
+    min-height: 100px;
+}
+
+.coluna label{
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.ajuda .botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda .botao button{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 0 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+footer .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sci{
+    margin-top: 50px;
+    display: flex;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #777;
+    font-size: 2em;
+}
+
+.sci li a:hover{
+    color: white;
+}
+
+.sci li a i{
+    width: 70px;
+}
+
+.crypt{
+    width: 100%;
+    background: #000;
+    padding: 8px 100px;
+    text-align: center;
+    color: #777;
+    text-decoration: none;
+}
+
+/* Parte viajar */
+#scroll{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255, 0.05);
+    z-index: 100;
+}
+
+#progresso{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: rolar 5s linear infinite;
+    z-index: 100;
+    border-radius: 20px;
+}
+
+@keyframes rolar{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progresso::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+    z-index: 10000;
+}
+
+#progresso::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+    z-index: 10000;
+}
+
+.fade2{
+    animation: fadeun 1.2s both;
+}
+
+@keyframes fadeun{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+.badyv{
+    background: url(Fotos/planetas/galaxia.jpg) no-repeat center center fixed;
+    background-size: cover;
+    padding-bottom: 300px;
+    overflow-x: hidden;
+}
+
+.reveal2{
+    position: relative;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal2.active{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.reveal3{
+    position: relative;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal3.active{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section .pack h2{
+    margin-left: 400px;
+    font-size: 4em;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
+
+section .texto2{
+    margin-right: 200px;
+}
+
+section .container2{
+    position: relative;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section:nth-child(even) .container2{
+    flex-direction: row-reverse;
+}
+
+section .container2 .imagem{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+}
+
+section .container2 .imagem img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .container2 .content{
+    position: absolute;
+    right: 0;
+    margin-top: 200px;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: #333;
+    z-index: 1;
+    max-width: 400px;
+    color: #fff;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    border-bottom: 6px solid #5da9e5;
+}
+
+section:nth-child(even) .container2 .content{
+    left: 0;
+}
+
+/* Parte Login */
+
+
+.seco{
+    position: relative;
+    min-height: 100vh;
+    background: url(Fotos/star-trails-1846734.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.seco.active{
+    background: url(Fotos/planetas/wallpaperflare.com_wallpaper\ \(35\).jpg)no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.seco .container3{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.seco .container3 .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.seco .container3 .user .image{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.seco .container3 .user .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seco .container3 .user .formulario{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.seco .container3 .user .formulario h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.seco .container3 .user .formulario input{
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.seco .container3 .user .formulario input[type="submit"]{
+    max-width: 100px;
+    background: #00485f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    border: none;
+}
+
+.seco .container3 .user .formulario button{
+    max-width: 100px;
+    background: #00485f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.seco .container3 .user.cadastro .formulario input[type="submit"]{
+    background: #0f354a;
+}
+
+.seco .container3 .user .formulario .cadastre{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.seco .container3 .user .formulario .cadastre a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #00485f;
+}
+
+.seco .container3 .user.cadastro .formulario .cadastre a{
+    color: #0f354a;
+}
+
+.seco .container3 .cadastro{
+    pointer-events: none;
+}
+
+.seco .container3.active .cadastro{
+    pointer-events: initial;
+}
+
+.seco .container3 .cadastro .formulario{
+    top: 100%;
+}
+
+.seco .container3.active .cadastro .formulario{
+    top: 0;
+}
+
+.seco .container3 .cadastro .image{
+    top: -100%;
+    transition: 0.5s;
+}
+
+.seco .container3.active .cadastro .image{
+    top: 0;
+}
+
+.seco .container3 .logar .formulario{
+    top: 0;
+}
+
+.seco .container3.active .logar .formulario{
+    top: 100%;
+}
+
+.seco .container3 .logar .image{
+    top: 0;
+    transition: 0.5s;
+}
+
+.seco .container3.active .logar .image{
+    top: -100%;
+
+}
