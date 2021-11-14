@@ -816,11 +816,17 @@ section:nth-child(even) .container2 .content{
     transition: 0.5s;
 }
 
-.seco.active{
-    background: url(Fotos/planetas/wallpaperflare.com_wallpaper\ \(35\).jpg)no-repeat center center fixed;
+.bodyc{
+    background: url(Fotos/planetas/cosmo.jpg) no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
+
+/* .seco.active{
+    background: url(Fotos/planetas/wallpaperflare.com_wallpaper\ \(35\).jpg)no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+} */
 
 .seco .container3{
     position: relative;

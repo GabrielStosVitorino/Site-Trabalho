@@ -44,7 +44,7 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
 
                 setTimeout(function () {
-                    window.location = "index.html";
+                    window.location = "SpaceLovin1.html";
                 }, 1000);
 
             });

@@ -48,3 +48,38 @@ function reveal3(){
         }
     }
 }
+
+function enviaremail() {
+    var vemail = email.value;
+    var vas = assunto.value;
+    var vnome = nome.value;
+    var vmsg = mensagem.value;
+    
+    if (vnome.length == 0) {
+        alert('Nome incorreto');
+    }
+
+    if (vas.length < 10) {
+        alert('Defina um assunto maior');
+    }
+
+    if (vmsg.length < 15) {
+        alert('Mensagem muito pequena!');
+    }
+
+    if (vemail.indexOf('@') == -1 || vemail.length < 8 || vemail.indexOf('.') == -1) {
+        alert('Email Inválido!');
+    }
+
+    if (nome.value.length > 0){
+        if (assunto.value.length >= 10) {
+            if (mensagem.value.length >= 15) {
+                if (vemail.indexOf('@') != -1 && vemail.length >= 8 && vemail.indexOf('.') != -1) {
+                    alert("Sua mensagem foi enviada com sucesso! A Wegrowffee agradece o contato!");
+                    window.location.href = '#home';
+                }
+            }
+        }
+    }
+   
+}
