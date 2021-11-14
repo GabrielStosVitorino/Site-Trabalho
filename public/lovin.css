@@ -944,7 +944,7 @@ section:nth-child(even) .container2 .content{
     color: #0f354a;
 }
 
-.seco .container3 .cadastro{
+/* .seco .container3 .cadastro{
     pointer-events: none;
 }
 
@@ -985,4 +985,4 @@ section:nth-child(even) .container2 .content{
 .seco .container3.active .logar .image{
     top: -100%;
 
-}
+} */

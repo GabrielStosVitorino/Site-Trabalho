@@ -79,7 +79,10 @@
             return false;
         }
 
-        then(function (resposta) {
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 

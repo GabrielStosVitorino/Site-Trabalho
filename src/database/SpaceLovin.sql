@@ -8,3 +8,4 @@ email varchar(45),
 senha varchar(45),
 confirmacaosenha varchar(45));
 
+select * from Cadastro;
