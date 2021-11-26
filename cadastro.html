@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./fotos/csgo-icon-42843-Windows.ico">
+    <script src="./assets/js/funcoes.js"></script>
+    <style>
+        body{
+            background: url('./fotos/ak47.png')no-repeat center center fixed;
+            background-size: cover;
+            overflow: scroll;
+        }
+    </style>
+    <title>Cadastro de Jogador</title>
+</head>
+<body onload="tudo()">
+    <div class="menutopo">
+        <div class="container">
+
+            <img src="./fotos/logo.png" class="foto_logo"></img>
+        </div>
+        <span class="textolink">
+            <a class="acor" href="index.html">Home</a>
+            <a href="tirar-time.html">Tirar Times</a>
+            <a href="times.html">Times</a>
+            <a href="jogadores.html">Jogadores</a>   
+            <a href="cadastrotime.html" style="float: right;">Cadastrar Time</a>    
+        </span>
+    </div>
+
+    <div class="login-page" id="tela_cadastro">
+        <div class="formulario">
+            <div class="form">
+                <h2>Cadastro De Jogador</h2><br><br>
+            <form class="register-form" id="form_cadastro">
+                <p>Primeiro Nome</p>
+                <input class="inputt" name="nome" type="text" placeholder="Apenas o Primeiro Nome">
+                <br>
+                <p>Idade</p>
+                <input class="inputt" name="idade" type="number" placeholder="0">
+                <br>
+                <p>E-mail</p>
+                <input class="inputt" name="email" type="text" placeholder="Email">
+                <br>
+                <p>Token <br><span class="letra_pequena">(Guarde-o, você irá usá-lo para gerenciar sua conta, use letras e caractéres para um token mais forte)</span></a></p> 
+                <input class="inputt" name="token" type="text" placeholder="nome@123Kk#">
+                <p>Nick Ingame</p>
+                <input class="inputt" name="nick" type="text" placeholder="Nick">
+                <br>    
+                <p>Patente</p>
+                <input class="inputt" name="patente" type="text" placeholder="Patente">
+                <br>
+                <p>ID Steam - Encontre <a class="textolink2" href="">Aqui!</a></p> 
+                <br>
+                <input class="inputt" name="idsteam" type="text" placeholder="023632054">                
+                <br>
+            </form>
+            <button class="btnin" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+            
+        </div>
+
+        <div id="div_erros_login">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var nome;
+        var email;
+        var idade;
+        var nickingame;
+        var ptt;
+        var id;
+        var token;
+var token_usuarios = [];
+var email_usuarios = [];
+var steam_usuarios = [];
+    
+    function cadastrar() {
+
+        formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        nome = formulario.get("nome");
+        email = formulario.get("email");
+        idade = formulario.get("idade");
+        nickingame = formulario.get("nick");
+        ptt = formulario.get("patente");
+        id = formulario.get("idsteam");
+        token = formulario.get("token");
+
+            
+        
+        validar();
+
+
+    }
+
+
+    function tudo(){
+    fetch("/usuarios/listar", {
+    method: "GET",
+}).then(function (resposta) {
+
+
+    resposta.json().then(function (data){
+        let len = data.length;
+
+        for (let i = 0; i <= len; i++){
+        let arquivo = data[i];
+            token_usuarios.push(arquivo.token);
+            email_usuarios.push(arquivo.email);
+            steam_usuarios.push(arquivo.steam);
+    }
+
+    });
+}).catch(function(error){
+    console.error(`ERROR`, error);
+});
+}
+
+function validar(){
+    if (nome.length > 15){
+        alert('O Nome pode ter no máximo 15 dígitos');
+        return false;
+    }
+
+    if (ptt.length > 18){
+        alert('A Patente pode ter no máximo 18 dígitos');
+        return false;
+    }
+
+    if (token.length < 5){
+        alert('Seu token precisa ter no mínimo 5 dígitos!');
+        return false;
+    }
+
+    if (token.indexOf('@') != -1 || token.indexOf('#') != -1 || token.indexOf('!') != -1 || token.indexOf('%') != -1 || token.indexOf('&') != -1 || token.indexOf('*') != -1 || token.indexOf('$') != -1){
+        
+    }else{
+        alert('Token fraco demais! Coloque pelo menos 1 caractere especial');
+        return false;
+    }
+
+    if (nickingame.length > 15){
+        alert('Seu nick pode ter no máximo 14 dígitos!');
+        return false;
+    }
+
+    if (nome == "" || email == "" || idade == "" || nickingame == "" || ptt == "" || id == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                alert('nome está em branco');
+            }
+            if (email == "" )  {
+                alert('email está em branco');
+            }
+            if (idade == 0 || idade == '' )  {
+                alert('idade está em incorreta');
+            }
+            if (nickingame == "" )  {
+                alert('nick está em branco');
+            }
+            if (ptt == "" )  {
+                alert('patente está em branco');
+            }
+            
+            if (id == "" )  {
+                alert('idSteam está em branco');
+            }
+            if (token == "" )  {
+                alert('token está em branco');
+            }
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            return false;
+        }
+
+        for(let i = 0; i < token_usuarios.length; i++){
+            if (token_usuarios[i] == token){
+                alert('Esse token já existe!!');
+                return false;
+            }
+            if (email_usuarios[i] == email){
+                alert('Email já cadastrado!!');
+                return false;
+            }
+            if (steam_usuarios[i] == id){
+                alert('ID Steam já cadastrado!!');
+                return false;
+            }
+        }
+    
+    inserir();
+}
+
+function inserir(){
+
+    fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "jogadores.html";
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+        });
+}
+</script>
