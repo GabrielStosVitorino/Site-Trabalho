@@ -26,6 +26,17 @@ function entrar() {
         return false;
     }
 
+    // if (email == email || senha != senha) {
+    //     window.alert("Ops, senha inválido! Verifique e tente novamente.");
+    //     finalizarAguardar();
+    //     return false;
+    // }
+    // else if (email != email || senha == senha) {
+    //     window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+    //     finalizarAguardar();
+    //     return false;
+    // }
+    
     fetch("/usuarios/autenticar", {
         method: "POST",
         body: formulario
@@ -79,7 +90,6 @@ function cadastrar() {
     var email = formulario.get("email");
     var senha = formulario.get("senha");
     var confirmacaoSenha = formulario.get("senhac");
-
 
     if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
 

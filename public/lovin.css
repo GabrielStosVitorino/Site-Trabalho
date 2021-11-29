@@ -992,3 +992,31 @@ section:nth-child(even) .container2 .content{
     top: -100%;
 
 } */
+
+/* Quiz */
+
+.quiz{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz h1{
+    margin-bottom: 5%;
+}
+
+.jogo{
+    background: rgb(255, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.per{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpacePerguntas</title>
+    <link rel="stylesheet" href="lovin.css">
+</head>
+
+<body>
+    <div id="progresso"></div>
+    <div id="scroll"></div>
+    <header>
+        <nav class="menu">
+            <a href="#home" class="logo"><img src="Fotos/SpaceLovin.png" alt=""></a>
+            <div class="earth">
+                <ul class="option">
+                    <li><a class="link" href="#home">Home</a></li>
+                    <li><a class="link" href="#quemsomos">Quem Somos</a></li>
+                    <li><a class="link" href="#navegue">Navegue Conosco</a></li>
+                    <li><a class="link" href="#fale">Fale Conosco</a></li>
+                    <li><a class="link" href="Logar.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="quiz">
+        <h1>Teste seu conhecimento sobre o espaço</h1>
+        <div class="jogo">
+            <br>
+        <div class="per" id="pg1" onsubmit="return validar()">
+            <span id="pgt1">
+                Qual o satélite natural da terra?
+            </span>
+            <br><br>
+            <select name="pergunta1" id="pergunta1"><br>
+
+                <option value="Mjolnir">Mjolnir</option>
+                <option value="Aesir">Aesir</option>
+                <option value="Nom">Nom</option>
+                <option value="Vanir">Vanir</option>
+            </select>
+            <br><br>
+
+            <button onclick="r1()">Verificar a Resposta</button>
+
+        </div>
+
+        <div class="per" id="pg2" style="display: none;">
+            <span id="pgt2">
+                Qual a maior estrela do sistema solar?
+            </span>
+            <br><br>
+
+            <select name="pergunta2" id="pergunta2">
+                <option value="2005">2005</option>
+                <option value="2008">2008</option>
+                <option value="2012">2012</option>
+                <option value="2010">2010</option>
+            </select><br><br>
+
+            <button onclick="r2()">Verificar a Resposta</button>
+
+        </div>
+
+        <div class="per" id="pg3" style="display: none;">
+
+            <span id="pgt3">
+                Qual a galáxia mais próxima do sistema solar?
+            </span>
+            <br><br>
+
+            <select name="pergunta3" id="pergunta3">
+                <option value="estudar">Que ele quer estudar o Hulk</option>
+                <option value="equipe">Que eles estão montando uma equipe</option>
+                <option value="dinheiro">Que Thaddeus lhe deve dinheiro</option>
+                <option value="shield">Que ele sabe sobre a shield</option>
+            </select><br><br>
+
+            <button onclick="r3()">Verificar a Resposta</button>
+
+        </div>
+
+        <div class="per" id="pg4" style="display: none;">
+
+            <span id="pgt4">
+                Em que ano o homem pisou na lua?
+            </span>
+            <br><br>
+
+            <select name="pergunta4" id="pergunta4">
+                <option value="Vibranium">Vibranium</option>
+                <option value="Adamantium">Adamantium</option>
+                <option value="Carbonádio">Carbonádio</option>
+                <option value="Promécio">Promécio</option>
+            </select>
+
+            <button onclick="r4()">Verificar a Resposta</button>
+
+        </div>
+
+        <div class="per" id="pg5" style="display: none;">
+
+            <span id="pgt5">
+                Qual a galáxia mais bonita do universo?
+            </span><br><br>
+
+            <select name="pergunta5" id="pergunta5">
+                <option value="Guaxinins">Guaxinins</option>
+                <option value="Gatos">Gatos</option>
+                <option value="Répteis">Répteis</option>
+                <option value="Patos">Patos</option>
+            </select>
+            <br><br>
+            <button onclick="r5()">Verificar a Resposta</button>
+        </div>
+        <br>
+        <button onclick="Finalizar()">Finalizar Tentativa</button>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script>
+    var perguntas = ['Qual o satélite natural da terra?', 'Qual a maior estrela do sistema solar?',
+    'Qual a galáxia mais próxima do sistema solar?', 'Em que ano o homem pisou na lua?', 'Qual a galáxia mais bonita do universo?'];
+
+
+    var resposta = ['Mjolnir', '2008', 'equipe', 'Vibranium', 'Gatos', 'Jarvis', "T'Challa", 'Chitauri', 'Loki', 'Natalie Rushman'];
+
+    var cont = 0
+    var pont = 0
+
+    function Começar() {
+        teste.style.display = 'block'
+        btnComeço.style.display = 'none'
+    }
+
+    function r1() {
+        if (pergunta1.value == resposta[0]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg1.style.display = 'none'
+            pg2.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r2() {
+        if (pergunta2.value == resposta[1]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg2.style.display = 'none'
+            pg3.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r3() {
+        if (pergunta3.value == resposta[2]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg3.style.display = 'none'
+            pg4.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r4() {
+        if (pergunta4.value == resposta[3]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg4.style.display = 'none'
+            pg5.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r5() {
+        if (pergunta5.value == resposta[4]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg5.style.display = 'none'
+            pg6.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r6() {
+        if (pergunta6.value == resposta[5]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg6.style.display = 'none'
+            pg7.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r7() {
+        if (pergunta7.value == resposta[6]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg7.style.display = 'none'
+            pg8.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r8() {
+        if (pergunta8.value == resposta[7]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg8.style.display = 'none'
+            pg9.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r9() {
+        if (pergunta9.value == resposta[8]) {
+            alert('Parabéns, você acertou')
+            pont++
+            pg9.style.display = 'none'
+            pg10.style.display = 'block'
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+        }
+    }
+
+    function r10() {
+        if (pergunta10.value == resposta[9]) {
+            alert('Parabéns, você acertou todas as perguntas')
+            pont++
+            pg10.style.display = 'none'
+
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+
+        }
+    }
+
+    function Finalizar() {
+        pont = pont * 10
+        alert("Você finalizou sua tentativa, e sua pontuação foi de : " + pont)
+
+    }
+
+</script>
