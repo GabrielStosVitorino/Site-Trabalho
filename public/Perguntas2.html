@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lovin.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a href="#home" class="logo"><img src="Fotos/SpaceLovin.png" alt=""></a>
+            <div class="earth">
+                <ul class="option">
+                    <li><a class="link" href="SpaceLovin.html#home">Home</a></li>
+                    <li><a class="link" href="SpaceLovin.html#quemsomos">Quem Somos</a></li>
+                    <li><a class="link" href="SpaceLovin.html#navegue">Navegue Conosco</a></li>
+                    <li><a class="link" href="Logar.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="bd">
+        <div class="square">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="contentg">
+                <div class="per" id="pg1" onsubmit="return validar()">
+                    <h3>Qual o satélite natural da terra?</h3>
+                    <br><br>
+                    <input id="pergunta1" type="text">
+                    <br><br>
+    
+                    <button onclick="r1()">Verificar a Resposta</button>
+    
+                </div>
+    
+                <div class="per" id="pg2" style="display: none;">
+                    <h3>Qual a maior estrela do sistema solar?</h3>
+                    <br><br>
+    
+                    <input id="pergunta2" type="text">
+                    <br><br>
+    
+                    <button onclick="r2()">Verificar a Resposta</button>
+    
+                </div>
+    
+                <div class="per" id="pg3" style="display: none;">
+                    <h3>Qual a galáxia mais próxima do sistema solar?</h3>
+                    <br><br>
+    
+                    <input id="pergunta3" type="text">
+                    <br><br>
+    
+                    <button onclick="r3()">Verificar a Resposta</button>
+    
+                </div>
+    
+                <div class="per" id="pg4" style="display: none;">
+                    <h3>Em que ano o homem pisou na lua?</h3>
+                    <br><br>
+    
+                    <input id="pergunta4" type="text">
+                    <br><br>
+                    <button onclick="r4()">Verificar a Resposta</button>
+    
+                </div>
+    
+                <div class="per" id="pg5" style="display: none;">
+                    <h3>Qual a galáxia mais bonita do universo?</h3>
+                    <br><br>
+    
+                    <input id="pergunta5" type="text">
+                    <br><br>
+                    <button onclick="r5()">Verificar a Resposta</button>
+                    <br><br>
+                    <button onclick="Finalizar()">Finalizar Tentativa</button>
+                </div>
+            </div>
+        </div>
+        <div class="clouds">
+            <img src="Fotos/cloud1.png" style="--i:1;">
+            <img src="Fotos/cloud2.png" style="--i:2;">
+            <img src="Fotos/cloud3.png" style="--i:3;">
+            <img src="Fotos/cloud4.png" style="--i:4;">
+            <img src="Fotos/cloud5.png" style="--i:5;">
+            <img src="Fotos/cloud1.png" style="--i:10;">
+            <img src="Fotos/cloud2.png" style="--i:9;">
+            <img src="Fotos/cloud3.png" style="--i:8;">
+            <img src="Fotos/cloud4.png" style="--i:7;">
+            <img src="Fotos/cloud5.png" style="--i:6;">
+        </div>
+    </section>
+    
+</body>
+
+</html>
+
+<script>
+    var perguntas = ['Qual o satélite natural da terra?', 'Qual a maior estrela do sistema solar?',
+        'Qual a galáxia mais próxima do sistema solar?', 'Em que ano o homem pisou na lua?', 'Qual a galáxia mais bonita do universo?'];
+
+
+    var resposta = ['Lua', 'Sol', 'Galáxia de Andromeda', '1969', 'M83', 'Galáxia Cata-Vento do Sul'];
+
+    var conta = 0
+    var ponto = 0
+
+    function r1() {
+        if (pergunta1.value == resposta[0]) {
+            alert('Parabéns, você acertou')
+            ponto++
+            pg1.style.display = 'none'
+            pg2.style.display = 'block'
+            pergunta1.value = ''
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+            pg1.style.display = 'block'
+
+        }
+    }
+
+    function r2() {
+        if (pergunta2.value == resposta[1]) {
+            alert('Parabéns, você acertou')
+            ponto++
+            pg2.style.display = 'none'
+            pg3.style.display = 'block'
+            pergunta2.value = ''
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+            pg1.style.display = 'block'
+
+        }
+    }
+
+    function r3() {
+        if (pergunta3.value == resposta[2]) {
+            alert('Parabéns, você acertou')
+            ponto++
+            pg3.style.display = 'none'
+            pg4.style.display = 'block'
+            pergunta3.value = ''
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+            pg1.style.display = 'block'
+
+        }
+    }
+
+    function r4() {
+        if (pergunta4.value == resposta[3]) {
+            alert('Parabéns, você acertou')
+            ponto++
+            pg4.style.display = 'none'
+            pg5.style.display = 'block'
+            pergunta4.value = ''
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+            pg1.style.display = 'block'
+        }
+    }
+
+    function r5() {
+        if (pergunta5.value == resposta[4] || pergunta5.value == resposta[5]) {
+            alert('Parabéns, você acertou')
+            ponto++
+            pg5.style.display = 'none'
+            pg1.style.display = 'block'
+            pergunta5.value = ''
+        }
+
+        else {
+            alert("Resposta incorreta")
+            Finalizar()
+            pg1.style.display = 'block'
+        }
+    }
+
+    function Finalizar() {
+        ponto = ponto * 10
+        alert("Você finalizou sua tentativa, e sua pontouação foi de : " + ponto)
+        pg1.style.display = 'block'
+    }
+
+</script>
