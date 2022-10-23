@@ -970,6 +970,22 @@ section:nth-child(even) .container2 .content{
     font-weight: 300;
 }
 
+.seco .container3 .user .formulario .voltar{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.seco .container3 .user .formulario .voltar a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #00485f;
+}
+
 .seco .container3 .user .formulario .cadastre a{
     font-weight: 600;
     text-decoration: none;
